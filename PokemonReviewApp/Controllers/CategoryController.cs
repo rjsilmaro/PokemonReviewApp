@@ -44,7 +44,7 @@ namespace PokemonReviewApp.Controllers
                 return NotFound();
             }
 
-            var category = _mapper.Map<PokemonDto>(_categoryRepository.GetCategory(categoryId));
+            var category = _mapper.Map<CategoryDto>(_categoryRepository.GetCategory(categoryId));
 
             if (!ModelState.IsValid)
             {
