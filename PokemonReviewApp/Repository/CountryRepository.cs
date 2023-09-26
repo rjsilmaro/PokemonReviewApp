@@ -23,8 +23,7 @@ namespace PokemonReviewApp.Repository
         public bool CreateCountry(Country country)
         {
             _context.Add(country);
-
-            return Save()
+            return Save();
         }
 
         public ICollection<Country> GetCountries()
@@ -50,7 +49,6 @@ namespace PokemonReviewApp.Repository
         public bool Save()
         {
             var saved = _context.SaveChanges();
-
             return saved > 0 ? true : false;
         }
     }

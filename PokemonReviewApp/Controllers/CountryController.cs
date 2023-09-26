@@ -76,11 +76,11 @@ namespace PokemonReviewApp.Controllers
             if (countryCreate == null)
                 return BadRequest(ModelState);
 
-            var category = _countryRepository.GetCountries()
+            var country = _countryRepository.GetCountries()
                 .Where(c => c.Name.Trim().ToUpper() == countryCreate.Name.TrimEnd().ToUpper())
                 .FirstOrDefault();
 
-            if (category != null)
+            if (country != null)
             {
                 ModelState.AddModelError("", "Country already exists");
                 return StatusCode(422, ModelState);
